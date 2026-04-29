@@ -15,3 +15,15 @@ for detecting fileless attacks, encoded commands, and malicious
 downloads via `iex`/`iwr`.
 
 ## Registry Keys Modified
+HKLM:\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging
+→ EnableScriptBlockLogging = 1
+HKLM:\SOFTWARE\Policies\Microsoft\Windows\PowerShell\ModuleLogging
+→ EnableModuleLogging = 1
+HKLM:\SOFTWARE\Policies\Microsoft\Windows\PowerShell\Transcription
+→ EnableTranscripting = 1
+
+## Verify in Splunk
+```splunk
+index=main sourcetype="WinEventLog:PowerShell" EventCode=4104
+| stats count by host
+```
