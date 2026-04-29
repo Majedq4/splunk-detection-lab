@@ -1,28 +1,49 @@
 # Splunk Detection Lab
 
+[![MITRE ATT&CK](https://img.shields.io/badge/-MITRE%20ATT%26CK-FF0000?&style=for-the-badge&logoColor=white)](https://attack.mitre.org/)
+[![Splunk](https://img.shields.io/badge/-Splunk-000000?&style=for-the-badge&logo=Splunk&logoColor=white)](https://www.splunk.com/)
+
 ## Objective
+Built a home SOC lab to simulate real-world attacks using Atomic Red Team 
+and detect them using Splunk Enterprise. Focused on MITRE ATT&CK techniques, 
+SPL query writing, and threat hunting methodology — directly applying skills 
+from the eCTHP certification in a practical environment.
 
-The Splunk Detection Lab project aimed to establish a controlled environment for simulating and detecting  cyber attacks. The primary focus was to ingest and analyze logs within Splunk which is  Security Information and Event Management (SIEM) system, generating test of MITRE ATT&CK using Atomic Red Team to mimic real-world attack scenarios. This hands-on experience was designed to deepen understanding of network security, attack patterns, and defensive strategies.
+---
 
-### Skills Learned
+## Lab Architecture
 
-- Advanced understanding of SIEM concepts and practical application.
-- Proficiency in analyzing and interpreting network logs.
-- Ability to generate and recognize attack signatures and patterns.
-- Enhanced knowledge of network protocols and security vulnerabilities.
-- Development of critical thinking and problem-solving skills in cybersecurity.
+| Component | Role | Details |
+|-----------|------|---------|
+| Windows 10 | Victim machine | Sysmon + Splunk Forwarder + Atomic Red Team |
+| Ubuntu Server | SIEM | Splunk Enterprise |
+| Host Machine | SOC Analyst | Splunk dashboard via port 8000 |
 
-### Tools Used
+---
 
-- Splnuk Enterprise  for log ingestion and analysis.
-- Windows 10 to capture logs
-- Atomic Red Team tools to simulate specifc MITRE ATT&CK IDs
+## Tools Used
 
-## Steps
-drag & drop screenshots here or use imgur and reference them using imgsrc
+| Tool | Purpose |
+|------|---------|
+| Splunk Enterprise | Log ingestion, SPL queries, alerting |
+| Sysmon | Endpoint telemetry |
+| Atomic Red Team | MITRE ATT&CK simulation |
+| Windows Defender | Endpoint protection |
+| Wireshark | Network traffic analysis |
 
-Every screenshot should have some text explaining what the screenshot is about.
+---
 
-Example below.
+## Techniques Detected
 
-*Ref 1: Network Diagram*
+| ATT&CK ID | Technique | Tactic | Report |
+|-----------|-----------|--------|--------|
+| T1059.001 | PowerShell | Execution | [View Report](./Detections/T1059.001/simulation.md) |
+| T1059.003 | Windows Command Shell | Execution | [View Report](./Detections/T1059.003/simulation.md) |
+| T1547.001 | Registry Run Keys / Startup Folder | Persistence | [View Report](./Detections/T1547.001/simulation.md) |
+
+---
+
+## Next Steps (Soon!)
+- [ ] Add Splunk SOAR for automated alert response
+- [ ] Build Gmail alerting playbook
+- [ ] Add more ATT&CK techniques
