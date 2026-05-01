@@ -29,7 +29,6 @@ from the eCTHP certification in a practical environment.
 | Sysmon | Endpoint telemetry |
 | Atomic Red Team | MITRE ATT&CK simulation |
 | Windows Defender | Endpoint protection |
-| Wireshark | Network traffic analysis |
 
 ---
 
