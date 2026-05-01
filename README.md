@@ -36,9 +36,9 @@ from the eCTHP certification in a practical environment.
 
 | ATT&CK ID | Technique | Tactic | Report |
 |-----------|-----------|--------|--------|
-| T1059.001 | PowerShell | Execution | [View Report](./Detections/T1059.001/simulation.md) |
-| T1059.003 | Windows Command Shell | Execution | [View Report](./Detections/T1059.003/simulation.md) |
-| T1547.001 | Registry Run Keys / Startup Folder | Persistence | [View Report](./Detections/T1547.001/simulation.md) |
+| T1059.001 | PowerShell | Execution | [View Report](./Detections/T1059.001.md) |
+| T1059.003 | Windows Command Shell | Execution | [View Report](./Detections/T1059.003.md) |
+| T1547.001 | Registry Run Keys / Startup Folder | Persistence | [View Report](./Detections/T1547.001.md) |
 
 ---
 
