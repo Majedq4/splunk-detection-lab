@@ -48,11 +48,17 @@ sysmon64 -c
 | EventCode | Description |
 |-----------|-------------|
 | 1 | Process Creation |
+| 2 | File Creation Time Changed |
 | 3 | Network Connection |
+| 4 | Sysmon Service State Changed |
+| 5 | Process Terminated |
 | 7 | Image Loaded |
-| 8 | CreateRemoteThread |
 | 10 | ProcessAccess |
 | 11 | File Created |
 | 12 | Registry Key Created/Deleted |
 | 13 | Registry Value Set |
+| 17 | Pipe Created |
 | 22 | DNS Query |
+| 25 | Process Tampering |
+| 26 | File Delete Logged |
+| 29 | File Executable Detected |
