@@ -1,9 +1,20 @@
 # Sysmon Configuration
+## Installation
 
-## Version
+1. Download Sysmon from Microsoft Sysinternals:
+   https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon
+2. Extract the zip and open PowerShell as Administrator
+3. Install with default config:
 ```powershell
-(Get-Item "$env:windir\sysmon64.exe").VersionInfo.ProductVersion
+sysmon64 -accepteula -i
 ```
+
+4. Or install with a config file directly:
+```powershell
+sysmon64 -accepteula -i C:\sysmonconfig.xml
+```
+
+---
 
 ## Verify Sysmon is Running
 ```powershell
@@ -11,13 +22,17 @@ Get-Service Sysmon64
 sysmon64 -c
 ```
 
+## Version
+```powershell
+(Get-Item "$env:windir\sysmon64.exe").VersionInfo.ProductVersion
+```
+
 ## Configuration Used
 **Olaf Hartong's Sysmon Modular Config**
 
 - Source: https://github.com/olafhartong/sysmon-modular
-- Reason: Provides modular, well-maintained ruleset that balances 
-  noise reduction with high-fidelity detection. Well suited for 
-  home lab and detection engineering environments.
+- It Provides modular, well-maintained ruleset that balances 
+  noise reduction with high-fidelity detection.
 
 ## Apply Configuration
 ```powershell
